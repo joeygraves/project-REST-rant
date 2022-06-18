@@ -1,5 +1,10 @@
 const router = require('express').Router()
 
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
+
 // GET /places
 router.get('/', (req, res) => {
     const places = [{
@@ -7,15 +12,22 @@ router.get('/', (req, res) => {
         city: 'Seattle',
         state: 'WA',
         cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
+        pic: '/images/thai-duck.jpg'
       }, {
         name: 'Coding Cat Cafe',
         city: 'Phoenix',
         state: 'AZ',
         cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
+        pic: '/images/cat-coffee.jpg'
       }]
     res.render('places/index', {places})
 })
+
+router.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('POST /places')
+})
+
+
 
 module.exports=router
