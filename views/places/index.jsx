@@ -13,16 +13,21 @@ function error404 () {
   }  
 
   function index (data) {
-    let placesFormatted = data.places.map((places) => {
+    let placesFormatted = data.places.map((place, index) => {
         return (
             <div className="col-sm-6">
-                <h2>{places.name}</h2>
+                <h2>
+                    <a href={`/places/${index}`}>
+                        {place.name}
+                    </a>
+                </h2>
+
                 <p className="text-center">
-                    {places.cuisines}
+                    {place.cuisines}
                 </p>
-                <img src={places.pic} alt={places.name}></img>
+                <img src={place.pic} alt={place.name}></img>
                 <p className="text-center">
-                    Located in {places.city}, {places.state}
+                    Located in {place.city}, {place.state}
                 </p>
             </div>
         )
