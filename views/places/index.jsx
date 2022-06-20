@@ -1,7 +1,7 @@
 const React = require('react')
 const Def = require('../default')
 
-function error404 () {
+const error404 = () => {
     return (
       <Def>
           <main>
@@ -12,8 +12,8 @@ function error404 () {
     )
   }  
 
-  function index (data) {
-    let placesFormatted = data.places.map((place, index) => {
+  const index = (data) => {
+    const placesFormatted = data.places.map((place, index) => {
         return (
             <div className="col-sm-6">
                 <h2>
