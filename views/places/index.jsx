@@ -46,10 +46,5 @@ const error404 = () => {
   }
   
 
-// // module.exports = {
-//     error404,
-//     index,
-// }
-
 module.exports = index
 
